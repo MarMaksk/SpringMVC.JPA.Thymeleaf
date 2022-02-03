@@ -1,0 +1,21 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2>Employee info</h2>
+<form th:action="saveEmployee" th:object="${emp}">
+    <input class="hidden" th:field="*{id}">
+    name <input th:field="*{name}"><br><br>
+    surname <input th:field="*{surname}"><br><br>
+    department <input th:field="*{department}"><br><br>
+    salary <input th:field="*{salary}"><br><br>
+    <input type="submit" value="OK">
+</form>
+<br>
+</body>
+</html>

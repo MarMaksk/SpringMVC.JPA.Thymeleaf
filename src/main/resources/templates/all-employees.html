@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Operations</th>
+    </tr>
+    <form th:each="Employee : ${emps}" th:action="@{updateInfo/{id}(id=${Employee.getId()})}">
+        <tr>
+            <td th:text="${Employee.getName()}"></td>
+            <td th:text="${Employee.getSurname()}"></td>
+            <td th:text="${Employee.getDepartment()}"></td>
+            <td th:text="${Employee.getSalary()}"></td>
+            <td><input type="submit" value="update"></td>
+        </tr>
+    </form>
+</table>
+<br>
+<form th:action="addNewEmployee">
+    <input type="submit" value="add">
+</form>
+</body>
+</html>
